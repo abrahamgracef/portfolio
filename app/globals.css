@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-canvas: #FAFAF9;
+  --color-border: #000000;
+  --color-accent: #0055FF;
+  --color-accent-hover: #0040CC;
+  --color-text-primary: #0A0A0A;
+  --color-text-muted: #525252;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAFAF9;
+  color: #0A0A0A;
+}
+
+body {
+  background-color: #FAFAF9;
+  color: #0A0A0A;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Static CSS-based technical square grid pattern */
+.tech-grid {
+  background-color: #FAFAF9;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+
+/* Status indicator pulsing dot animation */
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+.animate-pulse-dot {
+  animation: statusPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transform-origin: center;
+}
+
+/* SVG Terminal Drawing & Interaction Keyframes */
+@keyframes drawTerminalFrame {
+  0% {
+    stroke-dashoffset: 2600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawGridLines {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes termLineFade {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes termCursorBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* SVG Terminal Animation Utilities */
+.schematic-frame-draw {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  animation: drawTerminalFrame 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.schematic-line-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawGridLines 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.schematic-bus-draw {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawGridLines 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.term-line-1 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 0.4s forwards;
+}
+.term-line-2 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 0.6s forwards;
+}
+.term-line-3 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 0.8s forwards;
+}
+.term-line-4 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 1.0s forwards;
+}
+.term-line-5 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 1.2s forwards;
+}
+.term-line-6 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 1.4s forwards;
+}
+.term-line-7 {
+  opacity: 0;
+  animation: termLineFade 0.35s ease-out 1.6s forwards;
+}
+
+.animate-terminal-cursor {
+  animation: termCursorBlink 0.9s steps(2, start) infinite;
+}
+
+/* Focus and selection */
+::selection {
+  background-color: #0055FF;
+  color: #FFFFFF;
+}
+
+:focus-visible {
+  outline: 2px solid #0055FF;
+  outline-offset: 2px;
+}
+
+/* Accessibility: strictly enforce prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-pulse-dot,
+  .animate-terminal-cursor {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .schematic-frame-draw,
+  .schematic-line-draw,
+  .schematic-bus-draw {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .term-line-1,
+  .term-line-2,
+  .term-line-3,
+  .term-line-4,
+  .term-line-5,
+  .term-line-6,
+  .term-line-7 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
