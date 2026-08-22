@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-black bg-[#FAFAF9] font-mono text-xs text-black">
       {/* Top Grid Info */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="fluid-container py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Col 1: Identity */}
         <div className="space-y-2">
           <div className="text-[10px] tracking-widest text-[#737373] uppercase">{'// DEVELOPER'}</div>
@@ -58,8 +58,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="border-t border-black/10 py-4 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#737373]">
+      <div className="border-t border-black/10 py-4">
+        <div className="fluid-container flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#737373]">
           <div>
             &copy; {new Date().getFullYear()} Abraham Grace. ALL RIGHTS RESERVED.
           </div>

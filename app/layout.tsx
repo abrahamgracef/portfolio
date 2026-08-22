@@ -38,7 +38,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FAFAF9] text-[#0A0A0A] tech-grid antialiased selection:bg-[#0055FF] selection:text-white">
+      <body className="min-h-[100svh] flex flex-col bg-[#FAFAF9] text-[#0A0A0A] tech-grid antialiased selection:bg-[#0055FF] selection:text-white">
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

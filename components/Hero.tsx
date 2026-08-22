@@ -3,8 +3,8 @@ import TerminalSchematic from './TerminalSchematic';
 
 export default function Hero() {
   return (
-    <section className="w-full border-b border-black py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#FAFAF9]">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+    <section className="w-full border-b border-black py-12 sm:py-20 bg-[#FAFAF9]">
+      <div className="fluid-container flex flex-col gap-8">
         {/* Metadata Strip */}
         <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#525252]">
           <span className="border border-black px-2 py-0.5 bg-white font-semibold text-black">
@@ -22,8 +22,8 @@ export default function Hero() {
 
         {/* Display Typography & Hero Copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl tracking-tight uppercase text-black leading-none">
+          <div className="lg:col-span-5 flex flex-col gap-6 min-w-0">
+            <h1 className="font-display font-black text-[clamp(3rem,6vw,5.5rem)] tracking-tight uppercase text-black leading-none">
               SOFTWARE<br />DEVELOPER
             </h1>
 
@@ -48,8 +48,8 @@ export default function Hero() {
           </div>
 
           {/* Terminal Workstation Schematic */}
-          <div className="lg:col-span-7 w-full">
-            <div className="hidden md:block">
+          <div className="lg:col-span-7 w-full min-w-0">
+            <div className="hidden md:block w-full">
               <TerminalSchematic />
             </div>
             {/* Mobile Simplified Terminal */}

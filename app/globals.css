@@ -25,6 +25,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Consistent Responsive Container */
+.fluid-container {
+  width: min(100% - 2rem, 80rem); /* 80rem = 1280px */
+  margin-inline: auto;
+}
+@media (min-width: 640px) {
+  .fluid-container {
+    width: min(100% - 3rem, 80rem);
+  }
+}
+@media (min-width: 1024px) {
+  .fluid-container {
+    width: min(100% - 4rem, 80rem);
+  }
+}
+
 /* Static CSS-based technical square grid pattern */
 .tech-grid {
   background-color: #FAFAF9;

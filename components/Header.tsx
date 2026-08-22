@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#FAFAF9] border-b border-black font-mono text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="fluid-container py-3 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left: Identity / Moniker (and Mobile Status) */}
         <div className="flex w-full md:w-auto items-center justify-between">
           <div className="flex items-center gap-3">

@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function SelectedWork() {
   return (
-    <section id="work" className="w-full border-b border-black py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#FAFAF9]">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+    <section id="work" className="w-full border-b border-black py-16 sm:py-20 bg-[#FAFAF9]">
+      <div className="fluid-container flex flex-col gap-8">
         {/* Section Header Strip */}
         <div className="flex items-center justify-between border-b border-black/15 pb-4 font-mono text-xs">
           <span className="font-bold text-[#0055FF] tracking-wider uppercase">
