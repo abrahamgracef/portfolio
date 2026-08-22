@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TerminalSchematic from './TerminalSchematic';
 
+const PHRASES = [
+  "I am a Java Developer",
+  "I build backend systems",
+  "I design REST APIs"
+];
+
 export default function Hero() {
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      const i = loopNum % PHRASES.length;
+      const fullText = PHRASES[i];
+
+      setText(
+        isDeleting
+          ? fullText.substring(0, text.length - 1)
+          : fullText.substring(0, text.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 50 : 100);
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(500);
+      }
+    }, typingSpeed);
+    
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum, typingSpeed]);
+
   return (
     <section className="w-full border-b border-black py-12 sm:py-20 bg-[#FAFAF9]">
       <div className="fluid-container flex flex-col gap-8">
@@ -13,7 +49,7 @@ export default function Hero() {
           <span className="hidden sm:inline-block">{'//'}</span>
           <span className="font-semibold text-black">Abraham Grace</span>
           <span className="hidden sm:inline-block">{'//'}</span>
-          <span className="hidden sm:inline-block">ROLE: SOFTWARE DEVELOPER</span>
+          <span className="hidden sm:inline-block">ROLE: JAVA DEVELOPER</span>
           <span className="hidden sm:inline-block">{'//'}</span>
           <span className="text-[#0055FF] font-semibold">STATUS: AVAILABLE</span>
           <span className="hidden md:inline-block">{'//'}</span>
@@ -23,9 +59,14 @@ export default function Hero() {
         {/* Display Typography & Hero Copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 flex flex-col gap-6 min-w-0">
-            <h1 className="font-display font-black text-[clamp(3rem,6vw,5.5rem)] tracking-tight uppercase text-black leading-none">
-              SOFTWARE<br />DEVELOPER
-            </h1>
+            <div>
+              <h1 className="font-display font-black text-[clamp(3rem,6vw,5.5rem)] tracking-tight uppercase text-black leading-none break-words">
+                ABRAHAM<br />GRACE
+              </h1>
+              <div className="font-mono text-lg sm:text-xl lg:text-2xl text-[#0055FF] font-bold mt-3 sm:mt-4 flex flex-wrap items-center min-h-[56px] sm:min-h-[40px]">
+                <span>&gt; {text}</span><span className="animate-pulse ml-1">_</span>
+              </div>
+            </div>
 
             <p className="max-w-2xl font-sans text-base sm:text-lg text-[#525252] leading-relaxed">
               Building backend systems, APIs and practical software products. Specializing in Java and Spring Boot, while actively learning TypeScript and JavaScript to build full-stack web applications.
