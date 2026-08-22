@@ -41,7 +41,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-[100svh] flex flex-col bg-[#FAFAF9] dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#FAFAF9] tech-grid antialiased selection:bg-[#0055FF] selection:text-white">
+      <body className="min-h-[100svh] flex flex-col bg-[#FAFAF9] dark:bg-[#0A0A0A] dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#FAFAF9] dark:text-[#FAFAF9] tech-grid antialiased selection:bg-[#0055FF] selection:text-white">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           <main className="flex-1 w-full">{children}</main>

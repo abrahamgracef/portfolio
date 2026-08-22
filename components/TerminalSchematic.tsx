@@ -2,18 +2,18 @@ import React from 'react';
 
 export default function TerminalSchematic() {
   return (
-    <div className="w-full max-w-full overflow-hidden border border-black bg-white shadow-none">
+    <div className="w-full max-w-full overflow-hidden border border-black dark:border-white bg-white dark:bg-[#1A1A1A] shadow-none">
       {/* Schematic Top Metadata Strip */}
-      <div className="flex items-center justify-between border-b border-black px-3 py-1.5 bg-[#F4F4F2] font-mono text-[10px] text-[#525252]">
+      <div className="flex items-center justify-between border-b border-black dark:border-white px-3 py-1.5 bg-[#F4F4F2] dark:bg-[#262626] font-mono text-[10px] text-[#525252] dark:text-[#A3A3A3]">
         <div className="flex items-center gap-2">
-          <span className="font-semibold text-black">SCHEMATIC_REF:</span>
+          <span className="font-semibold text-black dark:text-white">SCHEMATIC_REF:</span>
           <span className="text-[#0055FF] font-bold">TERMINAL-WS-01</span>
-          <span className="hidden sm:inline text-[#737373]">{'//'}</span>
+          <span className="hidden sm:inline text-[#737373] dark:text-[#A3A3A3]">{'//'}</span>
           <span className="hidden sm:inline">SYS: SCHEMATIC_VECTOR</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="hidden md:inline text-[#737373]">DIM: 1024x640mm // AXIS-01</span>
-          <span className="border border-black/20 px-1.5 py-0.5 bg-white text-black font-semibold">
+          <span className="hidden md:inline text-[#737373] dark:text-[#A3A3A3]">DIM: 1024x640mm // AXIS-01</span>
+          <span className="border border-black/20 dark:border-white/20 px-1.5 py-0.5 bg-white dark:bg-[#1A1A1A] text-black dark:text-white font-semibold">
             SCALE: 1:1
           </span>
         </div>

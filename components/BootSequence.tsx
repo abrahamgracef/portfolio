@@ -55,12 +55,12 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAFAF9] font-mono text-xs text-black select-none pointer-events-auto transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAFAF9] dark:bg-[#0A0A0A] font-mono text-xs text-black dark:text-white select-none pointer-events-auto transition-opacity duration-300"
       aria-label="System Boot Sequence"
     >
-      <div className="w-full max-w-md p-6 border border-black bg-white shadow-none space-y-4 mx-4">
+      <div className="w-full max-w-md p-6 border border-black dark:border-white bg-white dark:bg-[#1A1A1A] shadow-none space-y-4 mx-4">
         {/* Top Header */}
-        <div className="flex items-center justify-between border-b border-black/20 pb-2 text-[10px] text-[#737373]">
+        <div className="flex items-center justify-between border-b border-black/20 dark:border-white/20 pb-2 text-[10px] text-[#737373] dark:text-[#A3A3A3]">
           <span>AG_SYS // BOOT_LOADER_v2.6</span>
           <span className="text-[#0055FF] font-bold">{progress}%</span>
         </div>
@@ -69,13 +69,13 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#0055FF] animate-pulse-dot" />
-            <span className="font-semibold text-black uppercase">
+            <span className="font-semibold text-black dark:text-white uppercase">
               {bootStatus === 'READY' ? 'INTERFACE // READY' : `SYSTEM INITIALIZING... [${bootStatus}]`}
             </span>
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full h-1.5 border border-black bg-[#F4F4F2] overflow-hidden">
+          <div className="w-full h-1.5 border border-black dark:border-white bg-[#F4F4F2] dark:bg-[#262626] overflow-hidden">
             <div 
               className="h-full bg-[#0055FF] transition-all duration-200"
               style={{ width: `${progress}%` }}
@@ -84,7 +84,7 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
         </div>
 
         {/* Diagnostics Subtitle */}
-        <div className="text-[10px] text-[#525252] flex justify-between border-t border-black/10 pt-2">
+        <div className="text-[10px] text-[#525252] dark:text-[#A3A3A3] flex justify-between border-t border-black/10 dark:border-white/10 pt-2">
           <span>MEM: 100% NOMINAL</span>
           <span>BUS: ACTIVE</span>
         </div>

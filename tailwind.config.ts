@@ -41,6 +41,7 @@ const config: Config = {
       },
       boxShadow: {
         'hard': '2px 2px 0px #000000',
+        'hard-white': '2px 2px 0px #ffffff',
         'hard-blue': '2px 2px 0px #0055FF',
         'none': 'none',
       },
