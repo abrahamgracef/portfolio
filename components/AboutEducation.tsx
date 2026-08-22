@@ -14,7 +14,7 @@ export default function AboutEducation() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-7 border border-black dark:border-white p-6 sm:p-8 bg-white dark:bg-[#1A1A1A] space-y-4">
+          <div className="lg:col-span-12 border border-black dark:border-white p-6 sm:p-8 bg-white dark:bg-[#1A1A1A] space-y-4">
             <h3 className="font-display text-xl font-bold uppercase tracking-tight text-black dark:text-white">
               ENGINEERING PHILOSOPHY
             </h3>
@@ -24,25 +24,6 @@ export default function AboutEducation() {
             <p className="font-sans text-sm sm:text-base text-[#525252] dark:text-[#A3A3A3] leading-relaxed">
               Specializing in backend engineering with Java and Spring Boot, I focus on delivering robust APIs, scalable architectures, and practical software products. I learn by building and understanding how systems behave beyond the code.
             </p>
-          </div>
-
-          <div className="lg:col-span-5 border border-black dark:border-white p-6 sm:p-8 bg-white dark:bg-[#1A1A1A] space-y-4 font-mono">
-            <h3 className="font-display text-xl font-bold uppercase tracking-tight text-black dark:text-white font-sans">
-              ACADEMIC CREDENTIALS
-            </h3>
-            <div className="space-y-3 pt-2">
-              <div className="text-xs font-semibold text-black dark:text-white uppercase">
-                VIT // INTEGRATED MASTER'S DEGREE
-              </div>
-              <div className="text-xs text-[#525252] dark:text-[#A3A3A3]">
-                Focus: Software Engineering, Backend Architecture.
-                <br />
-                CGPA // 7.34
-              </div>
-              <div className="text-[11px] text-[#0055FF] font-semibold border-t border-black/10 dark:border-white/10 pt-2">
-                STATUS: CURRENTLY PURSUING // EXPECTED 2029
-              </div>
-            </div>
           </div>
         </div>
       </div>
