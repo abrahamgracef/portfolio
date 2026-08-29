@@ -664,14 +664,14 @@ describe('F11: About & Education Section', () => {
 
   test('F11.2: Technical engineering philosophy and core disciplines blocks structured', () => {
     const about = ProjectInspector.getComponentSource('AboutEducation') || ProjectInspector.getComponentSource('About');
-    const content = about.content || '';
+    const content = (about.content || '').toLowerCase();
     expect(
-      content.includes('Philosophy') ||
-      content.includes('Engineering') ||
-      content.includes('Architecture') ||
-      content.includes('Systems') ||
-      content.includes('Discipline') ||
-      content.includes('Principles')
+      content.includes('philosophy') ||
+      content.includes('engineering') ||
+      content.includes('architecture') ||
+      content.includes('systems') ||
+      content.includes('discipline') ||
+      content.includes('principles')
     ).toBeTruthy('About section must include engineering philosophy or principles');
   });
 

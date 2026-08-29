@@ -52,7 +52,7 @@ export default function Contact() {
             <button
               onClick={handleCopy}
               type="button"
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white uppercase tracking-wider hover:bg-[#F4F4F2] dark:bg-[#262626] transition-all"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white uppercase tracking-wider hover:bg-[#F4F4F2] dark:hover:bg-[#262626] transition-all"
             >
               {copied ? '✓ COPIED TO CLIPBOARD // 200 OK' : 'COPY EMAIL TO CLIPBOARD'}
             </button>

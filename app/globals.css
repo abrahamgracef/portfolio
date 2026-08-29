@@ -9,6 +9,11 @@
   --color-accent-hover: #0040CC;
   --color-text-primary: #0A0A0A;
   --color-text-muted: #525252;
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
 }
 
 html {

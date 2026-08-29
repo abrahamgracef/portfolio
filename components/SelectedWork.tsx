@@ -31,22 +31,22 @@ export default function SelectedWork() {
           </div>
 
           <p className="font-sans text-sm sm:text-base text-[#525252] dark:text-[#A3A3A3] max-w-3xl leading-relaxed">
-            A Discord music platform focused on reliable playback, queue management and scalable bot infrastructure.
+            A Discord bot for anime news, episode alerts and server automation — delivering curated news, airing schedules and release announcements to every guild in near real time.
           </p>
 
           {/* Technical Architecture Specs Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono text-xs border-t border-b border-black/10 dark:border-white/10 py-4">
             <div className="space-y-1">
               <div className="text-[10px] text-[#737373] dark:text-[#A3A3A3] uppercase">ARCHITECTURE</div>
-              <div className="font-semibold text-black dark:text-white">Microservices / Bot Infrastructure</div>
+              <div className="font-semibold text-black dark:text-white">Event-Driven Bot / Scheduler</div>
             </div>
             <div className="space-y-1">
               <div className="text-[10px] text-[#737373] dark:text-[#A3A3A3] uppercase">API</div>
-              <div className="font-semibold text-[#0055FF]">Discord API + Lavalink</div>
+              <div className="font-semibold text-[#0055FF]">Discord.js + AniList GraphQL</div>
             </div>
             <div className="space-y-1">
               <div className="text-[10px] text-[#737373] dark:text-[#A3A3A3] uppercase">DATABASE</div>
-              <div className="font-semibold text-black dark:text-white">PostgreSQL</div>
+              <div className="font-semibold text-black dark:text-white">PostgreSQL (Supabase)</div>
             </div>
           </div>
 
@@ -54,17 +54,17 @@ export default function SelectedWork() {
           <div className="space-y-2 font-mono">
             <div className="text-[10px] text-[#737373] dark:text-[#A3A3A3] uppercase tracking-wider">TECHNOLOGY STACK</div>
             <div className="flex flex-wrap gap-2 text-xs">
-              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">Java</span>
-              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">Spring Boot</span>
-              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">Discord API</span>
-              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">Lavalink</span>
+              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">TypeScript</span>
+              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">Node.js</span>
+              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">discord.js</span>
+              <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">AniList GraphQL</span>
               <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">PostgreSQL</span>
               <span className="border border-black dark:border-white px-2.5 py-1 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white">Docker</span>
             </div>
           </div>
 
           {/* CTA Action */}
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap gap-3">
             <a
               href="https://kairoku.abrahamgracef.dev"
               target="_blank"
@@ -72,6 +72,14 @@ export default function SelectedWork() {
               className="inline-flex items-center gap-2 border border-black dark:border-white px-5 py-2.5 bg-black dark:bg-white text-white dark:text-black font-mono text-xs uppercase tracking-wider hover:bg-[#0055FF] dark:hover:text-white hover:border-[#0055FF] transition-all group"
             >
               OPEN SYSTEM <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <a
+              href="https://github.com/abrahamgracef/kairoku"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-5 py-2.5 bg-white dark:bg-[#1A1A1A] text-black dark:text-white font-mono text-xs uppercase tracking-wider hover:bg-[#0055FF] hover:text-white hover:border-[#0055FF] transition-all group"
+            >
+              VIEW SOURCE <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
         </div>

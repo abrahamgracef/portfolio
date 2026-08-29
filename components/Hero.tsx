@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TerminalSchematic from './TerminalSchematic';
 
 const PHRASES = [
-  "I am a Java Developer",
+  "I am a Software Developer",
   "I build backend systems",
   "I design REST APIs"
 ];
@@ -49,7 +49,7 @@ export default function Hero() {
           <span className="hidden sm:inline-block">{'//'}</span>
           <span className="font-semibold text-black dark:text-white">Abraham Grace</span>
           <span className="hidden sm:inline-block">{'//'}</span>
-          <span className="hidden sm:inline-block">ROLE: JAVA DEVELOPER</span>
+          <span className="hidden sm:inline-block">ROLE: SOFTWARE DEVELOPER</span>
           <span className="hidden sm:inline-block">{'//'}</span>
           <span className="text-[#0055FF] font-semibold">STATUS: AVAILABLE</span>
           <span className="hidden md:inline-block">{'//'}</span>
@@ -69,7 +69,7 @@ export default function Hero() {
             </div>
 
             <p className="max-w-2xl font-sans text-base sm:text-lg text-[#525252] dark:text-[#A3A3A3] leading-relaxed">
-              Building backend systems, APIs and practical software products. Specializing in Java and Spring Boot, while actively learning TypeScript and JavaScript to build full-stack web applications.
+              Building backend systems, APIs and practical software products. Experienced in Java and Spring Boot, with production TypeScript, Node.js and Discord API work.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2 font-mono text-xs">
