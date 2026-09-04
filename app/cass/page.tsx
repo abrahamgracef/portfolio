@@ -50,7 +50,7 @@ export default function CassPage() {
           <div className="flex flex-col items-center gap-4">
             <p className="text-green-600 dark:text-green-400 font-medium">Access granted.</p>
             <a
-              href="/cass.pdf"
+              href="/24d7d82f26b79cc6.pdf"
               download
               className="w-full text-center px-4 py-2 rounded-lg bg-[#0055FF] text-white font-medium hover:opacity-90 transition"
             >
