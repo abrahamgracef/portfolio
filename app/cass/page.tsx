@@ -1,13 +1,43 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const PASSCODE = '7337';
+
+function getDeleteTarget(): number {
+  const now = new Date();
+  const target = new Date();
+  target.setHours(19, 20, 0, 0);
+  if (target.getTime() <= now.getTime()) {
+    target.setDate(target.getDate() + 1);
+  }
+  return target.getTime();
+}
+
+function formatTime(ms: number): string {
+  const total = Math.max(0, Math.floor(ms / 1000));
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${pad(h)}:${pad(m)}:${pad(s)}`;
+}
 
 export default function CassPage() {
   const [input, setInput] = useState('');
   const [unlocked, setUnlocked] = useState(false);
   const [error, setError] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<number>(() => getDeleteTarget() - Date.now());
+  const [expired, setExpired] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      const remaining = getDeleteTarget() - Date.now();
+      setTimeLeft(remaining);
+      if (remaining <= 0) setExpired(true);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,8 +63,31 @@ export default function CassPage() {
           </span>
         </div>
 
+        {/* Countdown */}
+        <div className="flex items-center gap-2 border border-black dark:border-white px-3 py-1.5 bg-white dark:bg-[#1A1A1A] mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse-dot" />
+          <span className="tracking-widest text-[10px] font-semibold text-black dark:text-white uppercase">
+            {expired ? '// EXPIRED' : '// AUTO-DELETE IN'}
+          </span>
+          <span className="ml-auto text-sm font-bold text-black dark:text-white tabular-nums tracking-wider">
+            {formatTime(timeLeft)}
+          </span>
+        </div>
+
         <div className="border border-black dark:border-white bg-white dark:bg-[#1A1A1A]">
-          {!unlocked ? (
+          {expired ? (
+            <div className="flex flex-col p-5 gap-4 items-center">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                <p className="text-xs text-red-500 uppercase tracking-widest">
+                  Document expired
+                </p>
+              </div>
+              <p className="text-xs text-[#737373] dark:text-[#A3A3A3] text-center">
+                This link no longer contains the document.
+              </p>
+            </div>
+          ) : !unlocked ? (
             <form onSubmit={handleSubmit} className="flex flex-col">
               <div className="px-4 py-3 border-b border-black/20 dark:border-white/20 bg-[#F4F4F2] dark:bg-[#262626]">
                 <h1 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
