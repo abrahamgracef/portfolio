@@ -11,6 +11,11 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
   const [isBooted, setBooted] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const dismiss = () => {
+    setBooted(true);
+    if (onComplete) onComplete();
+  };
+
   useEffect(() => {
     // Check if user prefers reduced motion
     const prefersReducedMotion =
@@ -18,8 +23,7 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReducedMotion) {
-      setBooted(true);
-      if (onComplete) onComplete();
+      dismiss();
       return;
     }
 
@@ -39,8 +43,7 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
     }, 700);
 
     const t4 = setTimeout(() => {
-      setBooted(true);
-      if (onComplete) onComplete();
+      dismiss();
     }, 850);
 
     return () => {
@@ -55,10 +58,17 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAFAF9] dark:bg-[#0A0A0A] font-mono text-xs text-black dark:text-white select-none pointer-events-auto transition-opacity duration-300"
+      onClick={dismiss}
+      className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-[#FAFAF9] dark:bg-[#0A0A0A] font-mono text-xs text-black dark:text-white select-none pointer-events-auto transition-opacity duration-300 cursor-pointer"
       aria-label="System Boot Sequence"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === 'Escape' || e.key === ' ') dismiss(); }}
     >
-      <div className="w-full max-w-md p-6 border border-black dark:border-white bg-white dark:bg-[#1A1A1A] shadow-none space-y-4 mx-4">
+      <div 
+        className="w-full max-w-md p-6 border border-black dark:border-white bg-white dark:bg-[#1A1A1A] shadow-none space-y-4 mx-4 cursor-default"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Top Header */}
         <div className="flex items-center justify-between border-b border-black/20 dark:border-white/20 pb-2 text-[10px] text-[#737373] dark:text-[#A3A3A3]">
           <span>AG_SYS // BOOT_LOADER_v2.6</span>
@@ -86,7 +96,7 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
         {/* Diagnostics Subtitle */}
         <div className="text-[10px] text-[#525252] dark:text-[#A3A3A3] flex justify-between border-t border-black/10 dark:border-white/10 pt-2">
           <span>MEM: 100% NOMINAL</span>
-          <span>BUS: ACTIVE</span>
+          <span className="hover:text-[#0055FF] cursor-pointer" onClick={dismiss}>CLICK TO SKIP [ESC]</span>
         </div>
       </div>
     </div>

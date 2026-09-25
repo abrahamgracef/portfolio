@@ -34,16 +34,16 @@ export default function Header() {
 
         {/* Center: Technical Navigation */}
         <nav className="flex items-center gap-5 sm:gap-8 w-full md:w-auto overflow-x-auto justify-between md:justify-center pb-1 md:pb-0 no-scrollbar">
-          <a href="#work" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0">
+          <a href="#work" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0 cursor-pointer">
             WORK
           </a>
-          <a href="#stack" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0">
+          <a href="#stack" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0 cursor-pointer">
             STACK
           </a>
-          <a href="#about" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0">
+          <a href="#about" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0 cursor-pointer">
             ABOUT
           </a>
-          <a href="#contact" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0">
+          <a href="#contact" className="text-black dark:text-white hover:text-[#0055FF] tracking-wider uppercase transition-colors shrink-0 cursor-pointer">
             CONTACT
           </a>
         </nav>

@@ -6,17 +6,38 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const email = 'contact@abrahamgracef.dev';
 
-  const handleCopy = () => {
-    if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(email).then(() => {
+  const handleCopy = async () => {
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(email);
         setCopied(true);
         setTimeout(() => setCopied(false), 2500);
-      });
+        return;
+      }
+    } catch {
+      // Fallback below
+    }
+
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // Fallback silently
     }
   };
 
   return (
-    <section id="contact" className="w-full py-16 sm:py-20 bg-[#FAFAF9] dark:bg-[#0A0A0A]">
+    <section id="contact" className="w-full py-16 sm:py-20 bg-[#FAFAF9] dark:bg-[#0A0A0A] scroll-mt-16">
       <div className="fluid-container flex flex-col gap-8">
         <div className="flex items-center justify-between border-b border-black/15 dark:border-white/15 pb-4 font-mono text-xs">
           <span className="font-bold text-[#0055FF] tracking-wider uppercase">
@@ -44,7 +65,7 @@ export default function Contact() {
           <div className="flex flex-wrap items-center gap-4 pt-2 font-mono text-xs">
             <a
               href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-6 py-3 bg-[#0055FF] text-white uppercase tracking-wider hover:bg-[#0040CC] transition-all"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-6 py-3 bg-[#0055FF] text-white uppercase tracking-wider hover:bg-[#0040CC] transition-all cursor-pointer select-none"
             >
               TRANSMIT VIA MAIL [contact@abrahamgracef.dev] ↗
             </a>
@@ -52,7 +73,7 @@ export default function Contact() {
             <button
               onClick={handleCopy}
               type="button"
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white uppercase tracking-wider hover:bg-[#F4F4F2] dark:hover:bg-[#262626] transition-all"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white uppercase tracking-wider hover:bg-[#F4F4F2] dark:hover:bg-[#262626] transition-all cursor-pointer select-none"
             >
               {copied ? '✓ COPIED TO CLIPBOARD // 200 OK' : 'COPY EMAIL TO CLIPBOARD'}
             </button>

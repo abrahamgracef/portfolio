@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SelectedWork() {
   return (
-    <section id="work" className="w-full border-b border-black dark:border-white py-16 sm:py-20 bg-[#FAFAF9] dark:bg-[#0A0A0A]">
+    <section id="work" className="w-full border-b border-black dark:border-white py-16 sm:py-20 bg-[#FAFAF9] dark:bg-[#0A0A0A] scroll-mt-16">
       <div className="fluid-container flex flex-col gap-8">
         {/* Section Header Strip */}
         <div className="flex items-center justify-between border-b border-black/15 dark:border-white/15 pb-4 font-mono text-xs">
@@ -72,14 +72,6 @@ export default function SelectedWork() {
               className="inline-flex items-center gap-2 border border-black dark:border-white px-5 py-2.5 bg-black dark:bg-white text-white dark:text-black font-mono text-xs uppercase tracking-wider hover:bg-[#0055FF] dark:hover:text-white hover:border-[#0055FF] transition-all group"
             >
               OPEN SYSTEM <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </a>
-            <a
-              href="https://github.com/abrahamgracef/kairoku"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-5 py-2.5 bg-white dark:bg-[#1A1A1A] text-black dark:text-white font-mono text-xs uppercase tracking-wider hover:bg-[#0055FF] hover:text-white hover:border-[#0055FF] transition-all group"
-            >
-              VIEW SOURCE <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
         </div>

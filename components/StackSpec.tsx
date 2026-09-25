@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function StackSpec() {
   return (
-    <section id="stack" className="w-full border-b border-black dark:border-white py-16 sm:py-20 bg-[#FAFAF9] dark:bg-[#0A0A0A]">
+    <section id="stack" className="w-full border-b border-black dark:border-white py-16 sm:py-20 bg-[#FAFAF9] dark:bg-[#0A0A0A] scroll-mt-16">
       <div className="fluid-container flex flex-col gap-8">
         <div className="flex items-center justify-between border-b border-black/15 dark:border-white/15 pb-4 font-mono text-xs">
           <span className="font-bold text-[#0055FF] tracking-wider uppercase">
