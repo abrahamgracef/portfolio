@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   title: 'Abraham Grace — Software Developer & Engineering Systems',
   description:
     'Engineering document and personal developer portfolio for Abraham Grace. High-precision full-stack architecture, web systems, and cloud infrastructure.',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/apple-icon.svg',
+  },
 };
 
 import { ThemeProvider } from '@/components/ThemeProvider';

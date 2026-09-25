@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <rect width="180" height="180" rx="36" fill="#0A0A0A"/>
+  <rect x="8" y="8" width="164" height="164" rx="28" fill="none" stroke="#0055FF" stroke-width="8"/>
+  <text x="82" y="98" dominant-baseline="middle" text-anchor="middle" font-family="ui-monospace, 'JetBrains Mono', monospace" font-weight="900" font-size="76" fill="#FAFAF9" letter-spacing="-2">AG</text>
+  <circle cx="134" cy="120" r="10" fill="#0055FF"/>
+</svg>
