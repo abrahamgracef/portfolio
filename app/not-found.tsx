@@ -17,7 +17,7 @@ export default function NotFound() {
         <div className="pt-2">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white text-xs hover:bg-[#0055FF] hover:text-white hover:border-[#0055FF] transition-all uppercase"
+            className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 bg-[#FAFAF9] dark:bg-[#0A0A0A] text-black dark:text-white text-xs hover:bg-[#0055FF] dark:hover:bg-[#0055FF] hover:text-white dark:hover:text-white hover:border-[#0055FF] dark:hover:border-[#0055FF] transition-all uppercase cursor-pointer"
           >
             RETURN TO ROOT NODE →
           </Link>

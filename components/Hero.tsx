@@ -75,13 +75,13 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 pt-2 font-mono text-xs">
               <a
                 href="#work"
-                className="inline-flex items-center justify-center border border-black dark:border-white px-5 py-3 bg-black dark:bg-white text-white dark:text-black hover:bg-[#0055FF] dark:hover:text-white hover:border-[#0055FF] transition-all cursor-pointer select-none"
+                className="inline-flex items-center justify-center border border-black dark:border-white px-5 py-3 bg-black dark:bg-white text-white dark:text-black hover:bg-[#0055FF] dark:hover:bg-[#0055FF] hover:border-[#0055FF] dark:hover:border-[#0055FF] hover:text-white dark:hover:text-white transition-all cursor-pointer select-none"
               >
                 EXPLORE WORK ↓
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center border border-black dark:border-white px-5 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white hover:bg-[#0055FF] hover:text-white hover:border-[#0055FF] transition-all cursor-pointer select-none"
+                className="inline-flex items-center justify-center border border-black dark:border-white px-5 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white hover:bg-[#0055FF] dark:hover:bg-[#0055FF] hover:border-[#0055FF] dark:hover:border-[#0055FF] hover:text-white dark:hover:text-white transition-all cursor-pointer select-none"
               >
                 INITIATE CONTACT ↗
               </a>

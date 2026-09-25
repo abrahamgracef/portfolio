@@ -65,7 +65,7 @@ export default function Contact() {
           <div className="flex flex-wrap items-center gap-4 pt-2 font-mono text-xs">
             <a
               href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-6 py-3 bg-[#0055FF] text-white uppercase tracking-wider hover:bg-[#0040CC] transition-all cursor-pointer select-none"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-6 py-3 bg-[#0055FF] text-white uppercase tracking-wider hover:bg-[#0040CC] dark:hover:bg-[#0040CC] hover:border-[#0040CC] dark:hover:border-[#0040CC] transition-all cursor-pointer select-none"
             >
               TRANSMIT VIA MAIL [contact@abrahamgracef.dev] ↗
             </a>
@@ -73,7 +73,7 @@ export default function Contact() {
             <button
               onClick={handleCopy}
               type="button"
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white uppercase tracking-wider hover:bg-[#F4F4F2] dark:hover:bg-[#262626] transition-all cursor-pointer select-none"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-3 bg-white dark:bg-[#1A1A1A] text-black dark:text-white uppercase tracking-wider hover:bg-[#0055FF] dark:hover:bg-[#0055FF] hover:border-[#0055FF] dark:hover:border-[#0055FF] hover:text-white dark:hover:text-white transition-all cursor-pointer select-none"
             >
               {copied ? '✓ COPIED TO CLIPBOARD // 200 OK' : 'COPY EMAIL TO CLIPBOARD'}
             </button>

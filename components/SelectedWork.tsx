@@ -69,7 +69,7 @@ export default function SelectedWork() {
               href="https://kairoku.abrahamgracef.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-black dark:border-white px-5 py-2.5 bg-black dark:bg-white text-white dark:text-black font-mono text-xs uppercase tracking-wider hover:bg-[#0055FF] dark:hover:text-white hover:border-[#0055FF] transition-all group"
+              className="inline-flex items-center gap-2 border border-black dark:border-white px-5 py-2.5 bg-black dark:bg-white text-white dark:text-black font-mono text-xs uppercase tracking-wider hover:bg-[#0055FF] dark:hover:bg-[#0055FF] hover:border-[#0055FF] dark:hover:border-[#0055FF] hover:text-white dark:hover:text-white transition-all group cursor-pointer select-none"
             >
               OPEN SYSTEM <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
